@@ -1,9 +1,13 @@
 import {test, expect} from "@playwright/test";
 
-test('Open google home page', async ({page})=>{
-    await page.goto('https://www.google.com');
-});
+test.describe('crello testing', ()=>{
+    test.beforeEach(async ({page})=>{
+        await page.goto('https://www.crello.com');  
+    });
 
-test('Open Facebook home page', async ({page})=>{
-    await page.goto('https://www.facebook.com')
+
+test('Check crello title', async({page})=>{
+    await expect(page).toHaveTitle('VistaCreate – Free Graphic Design Software with 70,000+ Free Templates');
+    await expect (page.locator('.search-input')).toHaveAttribute('placeholder', 'Search thousands of templates');
+});
 });

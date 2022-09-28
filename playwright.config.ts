@@ -6,19 +6,14 @@ const config: PlaywrightTestConfig = {
     },
     projects: [
         {
-            name:'chromium',
-            use: {...devices['Desktop Chrome']}    
-        },
-        {
             name:'firefox',
-            use: {...devices['Desktop Firefox']}    
+            use: {...devices['Desktop Firefox']},    
         },
         {
-            name:'webKit',
-            use: {...devices['Desktop Safari']}    
+            name:'chromium',
+            use: {...devices['Desktop Chrome']},    
         },
         
-    ]
-        
-};
+     ]
+        };
 export default config;
